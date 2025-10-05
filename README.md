@@ -1,4 +1,5 @@
 ```
-add_time.bat /add 12
-add_time.bat /subtract 2
+add_time.bat 12
+add_time.bat -12
 ```
+12 is the number of minutes to add or subtract
