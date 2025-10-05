@@ -4,11 +4,11 @@ set op_=
 if /i "%~1"=="/t"  goto validate_arg_ok1
 if /i "%~1"=="/m" goto validate_arg_ok1
 if /i "%~1"=="/c" goto validate_arg_ok1
-echo %~1| findstr /v "^[0-9]*$" >NUL&&(echo:ERROR:invalid first argument&goto :checksyntax) || (set "add_seconds=%~1")
+echo %~1| findstr /v "^[-+][0-9]*$" >NUL&&(echo:ERROR:invalid first argument&goto :checksyntax) || (set "add_seconds=%~1")
 
 :validate_arg_ok1
 if "%~2"=="" call :setok & goto validate_arg_ok2
-echo %~2| findstr /v "^[0-9]*$" >NUL&&(echo: >NUL) || (set "add_seconds=%~2"&call :setok & goto validate_arg_ok2)
+echo %~2| findstr /v "^[-+][0-9]*$" >NUL&&(echo: >NUL) || (set "add_seconds=%~2"&call :setok & goto validate_arg_ok2)
 if /i "%~2"=="/t"  call :setok & goto validate_arg_ok2
 if /i "%~2"=="/m" call :setok & goto validate_arg_ok2
 if /i "%~2"=="/c" call :setok & goto validate_arg_ok2
