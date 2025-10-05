@@ -1,5 +1,5 @@
 @echo off
-
+set /a add_seconds=0
 set op_=
 if /i "%~1"=="/t"  goto validate_arg_ok1
 if /i "%~1"=="/m" goto validate_arg_ok1
