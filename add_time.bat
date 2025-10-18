@@ -30,8 +30,8 @@ echo:                               /t prints total time in seconds
 echo:                               /m prints in format HH:mm
 echo:                               /p convert seconds to time format
 echo:     Where {Number} is:
-echo:                               number of Minutes:-any integer (not too large)
-echo:                               number of Seconds:-for only /p option
+echo:                               number of Minutes: any integer (not too large)
+echo:                               number of Seconds: for only /p option
 goto :eof
 :validate_arg_ok2
 if /i "%~2"=="/p" set /a "total_seconds=%~1"&goto :calculate_from_total_seconds
@@ -75,4 +75,5 @@ if /i "%~2"=="/m" (echo %result_hours%:%result_minutes%&goto :eof)
 
 if /i "%~1"=="/t" (echo %total_seconds%&goto :eof)
 if /i "%~1"=="/m" (echo %result_hours%:%result_minutes%&goto :eof)
+
 echo %result_hours%:%result_minutes%:%result_seconds%
